@@ -12,27 +12,20 @@ def padding(pic):
     n_row = len(pic)
     n_col = len(pic[0])
     channel = len(pic[0][0])
-
-    # zero_dot=[0 for i in range(channel)]
     zero_dot = np.zeros(channel)
-    result=[]
-    result.append([zero_dot for i in range(n_col)])
-    # print("----->",result)
-    for i in range(n_row + 1):
-        if (i == n_row):
-            # result.append([zero_dot for i in range(n_col)])
-            result.append([[zero_dot for i in range(n_col)]])
-        else:
+    result = np.array([[zero_dot for i in range(n_col + 2)]])
+    for i in range(n_row):
+        temp = np.concatenate((np.array([zero_dot]), pic[i], np.array([zero_dot])))
+        temp = np.expand_dims(temp, 0)
+        result = np.concatenate((result, temp))
 
-            temp = pic[i]
-            temp = np.insert(temp, 0, zero_dot)
-            temp = np.append(temp, zero_dot)
-            result.append(temp)
-            if (i == 0):
-                print("pic[i]",pic[i])
-                print("result==>", type(temp))
-                # print("1111111result,", result[223])
-                print("2222222result,", result[1])
+    result = np.concatenate((result, np.array([[zero_dot for i in range(n_col + 2)]])))
+    print("result==>", result)
+    print("result,", type(result), len(result))
+    print("result,", type(result[0]), len(result[0]))
+    print("result,", type(result[0, 0]), len(result[0, 0]))
+    print("result,", type(result[0, 0, 0]))
+    return result
 
 
 def MaxPooling2D(pool_size, strides):
