@@ -4,7 +4,7 @@
 ## LAB 1-1
 * Install them at a same directory.
 * For example: `/home/$(USER)/RISCV/riscv-gnu-toolchain_rvv-0.9.x`
-![image](https://github.com/BoWeii/AAML-f21/blob/master/LAB1/menu.png)
+![image](https://github.com/BoWeii/AAML-f21/blob/master/lab1/menu.png)
 ### 0. Set environment variable
 run`vim ~/.bashrc` in terminal
 add these in the .bashrc file
@@ -182,4 +182,4 @@ Compile and test ISA:
 
 
 ##  Spike Debugger Usage (spike -d)
-![image](https://github.com/BoWeii/AAML-f21/blob/master/LAB1/spike.png)
+![image](https://github.com/BoWeii/AAML-f21/blob/master/lab1/spike.png)
