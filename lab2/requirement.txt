@@ -1,2 +1,5 @@
 numpy==1.21.4
 Pillow
+torch
+torchvision
+keras
